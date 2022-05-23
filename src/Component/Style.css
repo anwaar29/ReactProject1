@@ -1,0 +1,56 @@
+ul {
+    display: flex;
+    gap: 200px;
+    text-decoration: none;
+    margin-left: 80px;
+
+}
+
+li {
+    list-style: none;
+}
+
+.the {
+    position: relative;
+    top: 20px;
+    left: -50px;
+    font-size: 25px;
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    padding-bottom: 50px;
+}
+
+.siren {
+    position: absolute;
+    top: -50px;
+    left: 615px;
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.p1 {
+    height: 500px;
+    width: 650px;
+    position: absolute;
+    left: 120px;
+    margin-top: 20px;
+}
+
+.p2 {
+    height: 240px;
+    width: 450px;
+    position: absolute;
+    left: 780px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.p3 {
+    height: 248px;
+    width: 450px;
+    position: absolute;
+    left: 780px;
+    top: 445px;
+    margin-top: 5px;
+    border-radius: 5px;
+
+}
