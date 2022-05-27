@@ -105,7 +105,7 @@ export const fittydata = [
     "BlogContent": " These simple stretches, when done throughout the day, also help with a flat stomach, said celebrity nutritionist Rujuta Diwekar",
   },
   {
-    "Title": " ",
+    "Title": "‘Health must bring freedom, not restrictions’: Ankita Konwar pens note on fad diets and mindful eating ",
     "CategoryName": "HFITNESS",
     "PublishedDate": "  January  / 15   2019",
     "ImageAsset": " https://images.indianexpress.com/2021/05/ankita-konwar_1200_instagram.jpg?resize=450,250 ",

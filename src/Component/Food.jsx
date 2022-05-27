@@ -1,5 +1,6 @@
 import React from 'react'
 import { fooddata } from './Api'
+import { Link } from 'react-router-dom'
 const Food = () => {
   return (
     <>
@@ -7,14 +8,14 @@ const Food = () => {
       <div id='hr21'>
         <img src={fooddata[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{fooddata[0].Title}</p>
+        <p><Link to='/Food-data'>{fooddata[0].Title}</Link></p>
           <p >{fooddata[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
         <img src={fooddata[1].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{fooddata[1].Title}</p>
+        <p><Link to='/Food-data'>{fooddata[1].Title}</Link></p>
           <p >{fooddata[1].BlogContent}</p>
         </div>
       </div>
@@ -26,21 +27,21 @@ const Food = () => {
 
       <div className='sidebox21' >
         <img src={fooddata[0].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{fooddata[0].Title}</p>
+        <p><Link to='/Food-data'>{fooddata[0].Title}</Link></p>
         <p>{fooddata[0].BlogContent}</p>
         <p>{fooddata[0].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
         <img src={fooddata[1].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{fooddata[1].Title}</p>
+        <p><Link to='/Food-data'>{fooddata[1].Title}</Link></p>
         <p>{fooddata[1].BlogContent}</p>
         <p>{fooddata[1].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
         <img src={fooddata[2].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{fooddata[2].Title}</p>
+        <p><Link to='/Food-data'>{fooddata[2].Title}</Link></p>
         <p>{fooddata[2].BlogContent}</p>
         <p>{fooddata[2].PublishedDate}</p>
         <hr /></div>

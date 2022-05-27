@@ -1,5 +1,6 @@
 import React from 'react'
 import { hollydata } from './Api'
+import { Link } from 'react-router-dom'
 const Hollywood = () => {
   return (<>
 
@@ -7,14 +8,14 @@ const Hollywood = () => {
     <div id='hr21'>
       <img src={hollydata[0].ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-        <p >{hollydata[0].Title}</p>
+      <p><Link to='/Hollywood-data'>{hollydata[0].Title}</Link></p>
         <p >{hollydata[0].BlogContent}</p>
       </div>
     </div>
     <div id='hr22'>
       <img src={hollydata[1].ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-        <p >{hollydata[1].Title}</p>
+      <p><Link to='/Hollywood-data'>{hollydata[1].Title}</Link></p>
         <p >{hollydata[1].BlogContent}</p>
       </div>
     </div>
@@ -26,21 +27,21 @@ const Hollywood = () => {
 
     <div className='sidebox21' >
       <img src={hollydata[0].ImageAsset} alt="" width='280px' height='200px' />
-      <p>{hollydata[0].Title}</p>
+      <p><Link to='/Hollywood-data'>{hollydata[0].Title}</Link></p>
       <p>{hollydata[0].BlogContent}</p>
       <p>{hollydata[0].PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox32' >
       <img src={hollydata[1].ImageAsset} alt="" width='280px' height='200px' />
-      <p>{hollydata[1].Title}</p>
+      <p><Link to='/Hollywood-data'>{hollydata[1].Title}</Link></p>
       <p>{hollydata[1].BlogContent}</p>
       <p>{hollydata[1].PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox33' >
       <img src={hollydata[2].ImageAsset} alt="" width='280px' height='200px' />
-      <p>{hollydata[2].Title}</p>
+      <p><Link to='/Hollywood-data'>{hollydata[2].Title}</Link></p>
       <p>{hollydata[2].BlogContent}</p>
       <p>{hollydata[2].PublishedDate}</p>
       <hr /></div>

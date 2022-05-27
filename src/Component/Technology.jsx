@@ -1,5 +1,6 @@
 import React from 'react'
 import { techdata } from './Api'
+import { Link } from 'react-router-dom'
 const Technology = () => {
   return (
     <>
@@ -7,14 +8,14 @@ const Technology = () => {
       <div id='hr21'>
         <img src={techdata[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{techdata[0].Title}</p>
+        <p><Link to='/Technology-data'>{techdata[0].Title}</Link></p>
           <p >{techdata[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
         <img src={techdata[1].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{techdata[1].Title}</p>
+        <p><Link to='/Technology-data'>{techdata[1].Title}</Link></p>
           <p >{techdata[1].BlogContent}</p>
         </div>
       </div>
@@ -26,21 +27,21 @@ const Technology = () => {
 
       <div className='sidebox21' >
         <img src={techdata[0].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{techdata[0].Title}</p>
+        <p><Link to='/Technology-data'>{techdata[0].Title}</Link></p>
         <p>{techdata[0].BlogContent}</p>
         <p>{techdata[0].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
         <img src={techdata[1].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{techdata[1].Title}</p>
+        <p><Link to='/Technology-data'>{techdata[1].Title}</Link></p>
         <p>{techdata[1].BlogContent}</p>
         <p>{techdata[1].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
         <img src={techdata[2].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{techdata[2].Title}</p>
+        <p><Link to='/Technology-data'>{techdata[2].Title}</Link></p>
         <p>{techdata[2].BlogContent}</p>
         <p>{techdata[2].PublishedDate}</p>
         <hr /></div>

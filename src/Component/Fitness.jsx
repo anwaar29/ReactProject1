@@ -1,5 +1,6 @@
 import React from 'react'
 import { fittydata } from './Api'
+import { Link } from 'react-router-dom'
 const Fitness = () => {
   return (
     <>
@@ -7,14 +8,14 @@ const Fitness = () => {
       <div id='hr21'>
         <img src={fittydata[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{fittydata[0].Title}</p>
+        <p><Link to='/Fitness-data'>{fittydata[0].Title}</Link></p>
           <p >{fittydata[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
         <img src={fittydata[1].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{fittydata[1].Title}</p>
+        <p><Link to='/Fitness-data'>{fittydata[1].Title}</Link></p>
           <p >{fittydata[1].BlogContent}</p>
         </div>
       </div>
@@ -26,21 +27,21 @@ const Fitness = () => {
 
       <div className='sidebox21' >
         <img src={fittydata[0].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{fittydata[0].Title}</p>
+        <p><Link to='/Fitness-data'>{fittydata[0].Title}</Link></p>
         <p>{fittydata[0].BlogContent}</p>
         <p>{fittydata[0].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
         <img src={fittydata[1].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{fittydata[1].Title}</p>
+        <p><Link to='/Fitness-data'>{fittydata[1].Title}</Link></p>
         <p>{fittydata[1].BlogContent}</p>
         <p>{fittydata[1].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
         <img src={fittydata[2].ImageAsset} alt="" width='280px' height='200px' />
-        <p>{fittydata[2].Title}</p>
+        <p><Link to='/Fitness-data'>{fittydata[2].Title}</Link></p>
         <p>{fittydata[2].BlogContent}</p>
         <p>{fittydata[2].PublishedDate}</p>
         <hr /></div>
