@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Route, Routes,Link } from "react-router-dom"
+import { BrowserRouter, Route, Routes} from "react-router-dom"
 import Home from "./Component/Home"
 import Bollywood from './Component/Bollywood';
 import Technology from './Component/Technology';
@@ -16,6 +16,7 @@ function App() {
         <BrowserRouter>
           <Home />
           <Routes>
+            <Route path="/" element= {<Homebox />} />
             <Route path="/Homebox" element= {<Homebox />} />
             <Route path="/bollywood" element={<Bollywood />} />
             <Route path="/technology" element={<Technology />} />
