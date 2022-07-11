@@ -1,21 +1,39 @@
-import { bollydata } from './Api'
+
 import { Link } from 'react-router-dom'
 import './Style.css'
+import { useState } from 'react'
+import { useEffect } from 'react'
 const Bollywood = () => {
+ const [val,setval]=useState([])
+
+     useEffect(()=>{
+  const url='https://blogbackend2.herokuapp.com/api/bolly';
+  fetch(url).then(bollyres=>bollyres.json())
+  .then(bollyres=>setval(bollyres))
+},[])
+
+
+
   return (<>
-    <h1 style={{ position: 'absolute', left: '50px' }}>BOLLYWOOD   <hr /></h1>
+   {
+    val.filter((bollyres)=>{
+  return(
+  <>
+   
+
+    <h1 style={{ position: 'absolute', left: '50px' }}>BOLLYWOOD <hr /></h1>
     <div id='hr21'>
-      <img src={bollydata[0].ImageAsset} alt="" className='ltimg1' />
+      <img src={bollyres.ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-      <h4><Link to='/bollywood-data'>{bollydata[0].Title}</Link></h4>
-        <p >{bollydata[0].BlogContent}</p>
+      <h4><Link to='/bollywood-data'>{bollyres.Title}</Link></h4>
+        <p >{bollyres.BlogContent}</p>
       </div>
     </div>
     <div id='hr22'>
-      <img src={bollydata[1].ImageAsset} alt="" className='ltimg1' />
+      <img src={bollyres.ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-      <h4><Link to='/bollywood-data'>{bollydata[1].Title}</Link></h4>
-        <p >{bollydata[1].BlogContent}</p>
+      <h4><Link to='/bollywood-data'>{bollyres.Title}</Link></h4>
+        <p >{bollyres.BlogContent}</p>
       </div>
     </div>
     <div id='hr23'></div>
@@ -25,49 +43,30 @@ const Bollywood = () => {
 
 
     <div className='sidebox21' >
-      <img src={bollydata[0].ImageAsset} alt="" width='250px' height='150px' />
-      <p><Link to='/bollywood-data'>{bollydata[0].Title}</Link></p>
-      <p>{bollydata[0].BlogContent}</p>
-      <p>{bollydata[0].PublishedDate}</p>
+      <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
+      <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
+      <p>{bollyres.BlogContent}</p>
+      <p>{bollyres.PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox22' >
-      <img src={bollydata[1].ImageAsset} alt="" width='250px' height='150px' />
-      <p><Link to='/bollywood-data'>{bollydata[1].Title}</Link></p>
-      <p>{bollydata[1].BlogContent}</p>
-      <p>{bollydata[1].PublishedDate}</p>
+      <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
+      <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
+      <p>{bollyres.BlogContent}</p>
+      <p>{bollyres.PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox23' >
-      <img src={bollydata[2].ImageAsset} alt="" width='250px' height='150px' />
-      <p><Link to='/bollywood-data'>{bollydata[2].Title}</Link></p>
-      <p>{bollydata[2].BlogContent}</p>
-      <p>{bollydata[2].PublishedDate}</p>
+      <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
+      <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
+      <p>{bollyres.BlogContent}</p>
+      <p>{bollyres.PublishedDate}</p>
       <hr /></div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</>)})
+}
+   
   </>)
 }
 export default Bollywood

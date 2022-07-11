@@ -1,22 +1,35 @@
-import React from 'react'
-import { hollydata } from './Api'
+import React from 'react';
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 const Hollywood = () => {
+
+  const [val,setval]=useState([])
+
+  useEffect(()=>{
+    const url='https://blogbackend2.herokuapp.com/api/holly';
+    fetch(url).then(hollyres=>hollyres.json())
+    .then(hollyres=>setval(hollyres))
+  },[])
   return (<>
+  {
+    val.map((hollyres)=>{
+  return(
+  <>
 
     <h1 style={{ position: 'absolute', left: '50px' }}>HOLLYWOOD   <hr /></h1>
     <div id='hr21'>
-      <img src={hollydata[0].ImageAsset} alt="" className='ltimg1' />
+      <img src={hollyres.ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-      <p><Link to='/Hollywood-data'>{hollydata[0].Title}</Link></p>
-        <p >{hollydata[0].BlogContent}</p>
+      <p><Link to='/Hollywood-data'>{hollyres.Title}</Link></p>
+        <p >{hollyres.BlogContent}</p>
       </div>
     </div>
     <div id='hr22'>
-      <img src={hollydata[1].ImageAsset} alt="" className='ltimg1' />
+      <img src={hollyres.ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-      <p><Link to='/Hollywood-data'>{hollydata[1].Title}</Link></p>
-        <p >{hollydata[1].BlogContent}</p>
+      <p><Link to='/Hollywood-data'>{hollyres.Title}</Link></p>
+        <p >{hollyres.BlogContent}</p>
       </div>
     </div>
     <div id='hr23'></div>
@@ -26,25 +39,27 @@ const Hollywood = () => {
 
 
     <div className='sidebox21' >
-      <img src={hollydata[0].ImageAsset} alt="" width='280px' height='200px' />
-      <p><Link to='/Hollywood-data'>{hollydata[0].Title}</Link></p>
-      <p>{hollydata[0].BlogContent}</p>
-      <p>{hollydata[0].PublishedDate}</p>
+      <img src={hollyres.ImageAsset} alt="" width='280px' height='200px' />
+      <p><Link to='/Hollywood-data'>{hollyres.Title}</Link></p>
+      <p>{hollyres.BlogContent}</p>
+      <p>{hollyres.PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox32' >
-      <img src={hollydata[1].ImageAsset} alt="" width='280px' height='200px' />
-      <p><Link to='/Hollywood-data'>{hollydata[1].Title}</Link></p>
-      <p>{hollydata[1].BlogContent}</p>
-      <p>{hollydata[1].PublishedDate}</p>
+      <img src={hollyres.ImageAsset} alt="" width='280px' height='200px' />
+      <p><Link to='/Hollywood-data'>{hollyres.Title}</Link></p>
+      <p>{hollyres.BlogContent}</p>
+      <p>{hollyres.PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox33' >
-      <img src={hollydata[2].ImageAsset} alt="" width='280px' height='200px' />
-      <p><Link to='/Hollywood-data'>{hollydata[2].Title}</Link></p>
-      <p>{hollydata[2].BlogContent}</p>
-      <p>{hollydata[2].PublishedDate}</p>
+      <img src={hollyres.ImageAsset} alt="" width='280px' height='200px' />
+      <p><Link to='/Hollywood-data'>{hollyres.Title}</Link></p>
+      <p>{hollyres.BlogContent}</p>
+      <p>{hollyres.PublishedDate}</p>
       <hr /></div>
+      </>)})
+}
   </>
   )
 }

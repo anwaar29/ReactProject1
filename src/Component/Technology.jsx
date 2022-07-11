@@ -1,22 +1,40 @@
 import React from 'react'
-import { techdata } from './Api'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 const Technology = () => {
-  return (
-    <>
+
+
+  const [val,setval]=useState([])
+
+  useEffect(()=>{
+    const url='https://blogbackend2.herokuapp.com/api/tech';
+    fetch(url).then(techres=>techres.json())
+    .then(techres=>setval(techres))
+  },[])
+
+
+
+
+  return (<>
+{
+    val.map((techres)=>{
+  return(
+  <>
+
       <h1 style={{ position: 'absolute', left: '50px' }}>TECHNOLOGY  <hr /></h1>
       <div id='hr21'>
-        <img src={techdata[0].ImageAsset} alt="" className='ltimg1' />
+        <img src={techres.ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Technology-data'>{techdata[0].Title}</Link></p>
-          <p >{techdata[0].BlogContent}</p>
+        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
+          <p >{techres.BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
-        <img src={techdata[1].ImageAsset} alt="" className='ltimg1' />
+        <img src={techres.ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Technology-data'>{techdata[1].Title}</Link></p>
-          <p >{techdata[1].BlogContent}</p>
+        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
+          <p >{techres.BlogContent}</p>
         </div>
       </div>
       <div id='hr23'></div>
@@ -26,25 +44,27 @@ const Technology = () => {
 
 
       <div className='sidebox21' >
-        <img src={techdata[0].ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Technology-data'>{techdata[0].Title}</Link></p>
-        <p>{techdata[0].BlogContent}</p>
-        <p>{techdata[0].PublishedDate}</p>
+        <img src={techres.ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
+        <p>{techres.BlogContent}</p>
+        <p>{techres.PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
-        <img src={techdata[1].ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Technology-data'>{techdata[1].Title}</Link></p>
-        <p>{techdata[1].BlogContent}</p>
-        <p>{techdata[1].PublishedDate}</p>
+        <img src={techres.ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
+        <p>{techres.BlogContent}</p>
+        <p>{techres.PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
-        <img src={techdata[2].ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Technology-data'>{techdata[2].Title}</Link></p>
-        <p>{techdata[2].BlogContent}</p>
-        <p>{techdata[2].PublishedDate}</p>
+        <img src={techres.ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
+        <p>{techres.BlogContent}</p>
+        <p>{techres.PublishedDate}</p>
         <hr /></div>
+        </>)})
+}
 
     </>
   )

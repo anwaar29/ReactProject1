@@ -1,5 +1,7 @@
 
 import './App.css';
+import './Pages/allpages.css'
+import './Component/Style.css'
 import { BrowserRouter, Route, Routes} from "react-router-dom"
 import Home from "./Component/Home"
 import Bollywood from './Component/Bollywood';
@@ -17,15 +19,17 @@ function App() {
           <Home />
           <Routes>
             <Route path="/" element= {<Homebox />} />
-            <Route path="/Homebox" element= {<Homebox />} />
-            <Route path="/bollywood" element={<Bollywood />} />
-            <Route path="/technology" element={<Technology />} />
-            <Route path="/hollywood" element={<Hollywood />} />
-            <Route path="/fitness" element={<Fitness />} />
-            <Route path="/food" element={<Food />} />
+            <Route path="/api" element= {<Homebox />} />
+            <Route path="/api/datas" element= {<Homebox />} />
+            <Route path="/api/bolly" element={<Bollywood />} />
+            <Route path="/api/tech" element={<Technology />} />
+            <Route path="/api/holly" element={<Hollywood />} />
+            <Route path="/api/fitty" element={<Fitness />} />
+            <Route path="/api/food" element={<Food />} />
 
           </Routes>
         </BrowserRouter>
+        
       </div>
   );
 }
