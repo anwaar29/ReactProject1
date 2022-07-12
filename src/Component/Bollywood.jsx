@@ -12,25 +12,21 @@ const Bollywood = () => {
   .then(bollyres=>setval(bollyres))
 },[])
 
-
-
-  return (<>
+     return (<>
    {
-    val.filter((bollyres)=>{
-  return(
+    val.map((bollyres)=>{
+    return (
   <>
-   
-
     <h1 style={{ position: 'absolute', left: '50px' }}>BOLLYWOOD <hr /></h1>
     <div id='hr21'>
-      <img src={bollyres.ImageAsset} alt="" className='ltimg1' />
+      <img src={bollyres.id.ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
       <h4><Link to='/bollywood-data'>{bollyres.Title}</Link></h4>
         <p >{bollyres.BlogContent}</p>
       </div>
     </div>
     <div id='hr22'>
-      <img src={bollyres.ImageAsset} alt="" className='ltimg1' />
+      <img src={bollyres.ImageAsset[0]} alt="" className='ltimg1' />
       <div className="latbox">
       <h4><Link to='/bollywood-data'>{bollyres.Title}</Link></h4>
         <p >{bollyres.BlogContent}</p>
@@ -40,8 +36,8 @@ const Bollywood = () => {
 
     <p style={{ fontSize: '30px', position: 'absolute', top: '180px', left: '890px' }}>Top Posts
       <hr style={{ width: '200px', height: '3px', backgroundColor: 'lightblue' }} /><br /></p>
-
-
+                                                                                              
+                                                                                              
     <div className='sidebox21' >
       <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
       <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
