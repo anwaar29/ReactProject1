@@ -8,7 +8,7 @@ const Fitness = () => {
   useEffect(()=>{
     const url='https://blogbackend2.herokuapp.com/api/fitty';
     fetch(url).then(fittyres=>fittyres.json())
-    .then(fittyres=>setval(fittyres))
+    .then(fittyres=>setval([fittyres]))
   },[])
 
 
@@ -21,17 +21,17 @@ const Fitness = () => {
 
       <h1 style={{ position: 'absolute', left: '50px' }}>FITNESS  <hr /></h1>
       <div id='hr21'>
-        <img src={fittyres.ImageAsset} alt="" className='ltimg1' />
+        <img src={fittyres[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Fitness-data'>{fittyres.Title}</Link></p>
-          <p >{fittyres.BlogContent}</p>
+        <p><Link to='/Fitness-data'>{fittyres[0].Title}</Link></p>
+          <p >{fittyres[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
-        <img src={fittyres.ImageAsset} alt="" className='ltimg1' />
+        <img src={fittyres[1].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Fitness-data'>{fittyres.Title}</Link></p>
-          <p >{fittyres.BlogContent}</p>
+        <p><Link to='/Fitness-data'>{fittyres[1].Title}</Link></p>
+          <p >{fittyres[1].BlogContent}</p>
         </div>
       </div>
       <div id='hr23'></div>
@@ -41,24 +41,24 @@ const Fitness = () => {
 
 
       <div className='sidebox21' >
-        <img src={fittyres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Fitness-data'>{fittyres.Title}</Link></p>
-        <p>{fittyres.BlogContent}</p>
-        <p>{fittyres.PublishedDate}</p>
+        <img src={fittyres[2].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Fitness-data'>{fittyres[2].Title}</Link></p>
+        <p>{fittyres[2].BlogContent}</p>
+        <p>{fittyres[2].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
-        <img src={fittyres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Fitness-data'>{fittyres.Title}</Link></p>
-        <p>{fittyres.BlogContent}</p>
-        <p>{fittyres.PublishedDate}</p>
+        <img src={fittyres[0].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Fitness-data'>{fittyres[0].Title}</Link></p>
+        <p>{fittyres[0].BlogContent}</p>
+        <p>{fittyres[0].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
-        <img src={fittyres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Fitness-data'>{fittyres.Title}</Link></p>
-        <p>{fittyres.BlogContent}</p>
-        <p>{fittyres.PublishedDate}</p>
+        <img src={fittyres[1].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Fitness-data'>{fittyres[1].Title}</Link></p>
+        <p>{fittyres[1].BlogContent}</p>
+        <p>{fittyres[1].PublishedDate}</p>
         <hr /></div>
 
         </>)})

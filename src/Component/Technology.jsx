@@ -10,7 +10,7 @@ const Technology = () => {
   useEffect(()=>{
     const url='https://blogbackend2.herokuapp.com/api/tech';
     fetch(url).then(techres=>techres.json())
-    .then(techres=>setval(techres))
+    .then(techres=>setval([techres]))
   },[])
 
 
@@ -24,17 +24,17 @@ const Technology = () => {
 
       <h1 style={{ position: 'absolute', left: '50px' }}>TECHNOLOGY  <hr /></h1>
       <div id='hr21'>
-        <img src={techres.ImageAsset} alt="" className='ltimg1' />
+        <img src={techres[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
-          <p >{techres.BlogContent}</p>
+        <p><Link to='/Technology-data'>{techres[0].Title}</Link></p>
+          <p >{techres[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
-        <img src={techres.ImageAsset} alt="" className='ltimg1' />
+        <img src={techres[1].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
-          <p >{techres.BlogContent}</p>
+        <p><Link to='/Technology-data'>{techres[1].Title}</Link></p>
+          <p >{techres[1].BlogContent}</p>
         </div>
       </div>
       <div id='hr23'></div>
@@ -44,24 +44,24 @@ const Technology = () => {
 
 
       <div className='sidebox21' >
-        <img src={techres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
-        <p>{techres.BlogContent}</p>
-        <p>{techres.PublishedDate}</p>
+        <img src={techres[2].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Technology-data'>{techres[2].Title}</Link></p>
+        <p>{techres[2].BlogContent}</p>
+        <p>{techres[2].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
-        <img src={techres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
-        <p>{techres.BlogContent}</p>
-        <p>{techres.PublishedDate}</p>
+        <img src={techres[0].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Technology-data'>{techres[0].Title}</Link></p>
+        <p>{techres[0].BlogContent}</p>
+        <p>{techres[0].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
-        <img src={techres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Technology-data'>{techres.Title}</Link></p>
-        <p>{techres.BlogContent}</p>
-        <p>{techres.PublishedDate}</p>
+        <img src={techres[1].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Technology-data'>{techres[1].Title}</Link></p>
+        <p>{techres[1].BlogContent}</p>
+        <p>{techres[1].PublishedDate}</p>
         <hr /></div>
         </>)})
 }

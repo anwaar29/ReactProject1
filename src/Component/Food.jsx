@@ -8,7 +8,7 @@ const Food = () => {
   useEffect(()=>{
     const url='https://blogbackend2.herokuapp.com/api/food';
     fetch(url).then(foodres=>foodres.json())
-    .then(foodres=>setval(foodres))
+    .then(foodres=>setval([foodres]))
   },[])
   
 
@@ -20,17 +20,17 @@ const Food = () => {
   <>
       <h1 style={{ position: 'absolute', left: '50px' }}>FOOD   <hr /></h1>
       <div id='hr21'>
-        <img src={foodres.ImageAsset} alt="" className='ltimg1' />
+        <img src={foodres[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Food-data'>{foodres.Title}</Link></p>
-          <p >{foodres.BlogContent}</p>
+        <p><Link to='/Food-data'>{foodres[0].Title}</Link></p>
+          <p >{foodres[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr22'>
-        <img src={foodres.ImageAsset} alt="" className='ltimg1' />
+        <img src={foodres[1].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-        <p><Link to='/Food-data'>{foodres.Title}</Link></p>
-          <p >{foodres.BlogContent}</p>
+        <p><Link to='/Food-data'>{foodres[1].Title}</Link></p>
+          <p >{foodres[1].BlogContent}</p>
         </div>
       </div>
       <div id='hr23'></div>
@@ -40,24 +40,24 @@ const Food = () => {
 
 
       <div className='sidebox21' >
-        <img src={foodres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Food-data'>{foodres.Title}</Link></p>
-        <p>{foodres.BlogContent}</p>
-        <p>{foodres.PublishedDate}</p>
+        <img src={foodres[2].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Food-data'>{foodres[2].Title}</Link></p>
+        <p>{foodres[2].BlogContent}</p>
+        <p>{foodres[2].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox32' >
-        <img src={foodres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Food-data'>{foodres.Title}</Link></p>
-        <p>{foodres.BlogContent}</p>
-        <p>{foodres.PublishedDate}</p>
+        <img src={foodres[0].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Food-data'>{foodres[0].Title}</Link></p>
+        <p>{foodres[0].BlogContent}</p>
+        <p>{foodres[0].PublishedDate}</p>
         <hr /></div>
 
       <div className='sidebox33' >
-        <img src={foodres.ImageAsset} alt="" width='280px' height='200px' />
-        <p><Link to='/Food-data'>{foodres.Title}</Link></p>
-        <p>{foodres.BlogContent}</p>
-        <p>{foodres.PublishedDate}</p>
+        <img src={foodres[1].ImageAsset} alt="" width='280px' height='200px' />
+        <p><Link to='/Food-data'>{foodres[1].Title}</Link></p>
+        <p>{foodres[1].BlogContent}</p>
+        <p>{foodres[1].PublishedDate}</p>
         <hr /></div>
 
         </>)})

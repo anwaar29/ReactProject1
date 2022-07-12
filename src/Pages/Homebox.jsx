@@ -10,7 +10,7 @@ const Homebox = () => {
   useEffect(()=>{
     const url='https://blogbackend2.herokuapp.com/api/datas';
     fetch(url).then(datasres=>datasres.json())
-    .then(datasres=>setval(datasres))
+    .then(datasres=>setval([datasres]))
   },[])
 
   return (<>
@@ -18,12 +18,12 @@ const Homebox = () => {
     val.map((datasres)=>{
   return(
   <>
-      <img src={datasres.ImageAsset} className='p1'  alt='??'/>
-      <span className='sp1'>{datasres.PublishedDate}</span>
-      <img src={datasres.ImageAsset} className='p2'  alt='??'/>
-      <span className='sp2'> {datasres.PublishedDate}</span>
-      <img src={datasres.ImageAsset} className='p3' alt='??' />
-      <span className='sp3'>{datasres.PublishedDate}</span>
+      <img src={datasres[0].ImageAsset} className='p1'  alt='??'/>
+      <span className='sp1'>{datasres[0].PublishedDate}</span>
+      <img src={datasres[1].ImageAsset} className='p2'  alt='??'/>
+      <span className='sp2'> {datasres[1].PublishedDate}</span>
+      <img src={datasres[2].ImageAsset} className='p3' alt='??' />
+      <span className='sp3'>{datasres[2].PublishedDate}</span>
 
 
       <p style={{ fontSize: '40px', position: 'absolute', top: '700px', left: '110px' }}>The Latest
@@ -31,26 +31,26 @@ const Homebox = () => {
 
       <div className='container'>
         <div className='boxdetails'>
-          <img src={datasres.ImageAsset} alt="" height='250px' width='300px' />
-          <h4><Link to='/bollywood-data'>{datasres.Title}</Link></h4>
-          <p>{datasres.BlogContent}</p>
-          <p>{datasres.PublishedDate}</p>
+          <img src={datasres[0].ImageAsset} alt="" height='250px' width='300px' />
+          <h4><Link to='/bollywood-data'>{datasres[0].Title}</Link></h4>
+          <p>{datasres[0].BlogContent}</p>
+          <p>{datasres[0].PublishedDate}</p>
         </div>
       </div>
       <div className='container2'>
         <div className='boxdetails2'>
-          <img src={datasres.ImageAsset} alt="" height='250px' width='300px' />
-          <h4><Link to='/bollywood-data'>{datasres.Title}</Link></h4>
-          <p>{datasres.BlogContent}</p>
-          <p>{datasres.PublishedDate}</p>
+          <img src={datasres[1].ImageAsset} alt="" height='250px' width='300px' />
+          <h4><Link to='/bollywood-data'>{datasres[1].Title}</Link></h4>
+          <p>{datasres[1].BlogContent}</p>
+          <p>{datasres[1].PublishedDate}</p>
         </div>
       </div>
       <div className='container3'>
         <div className='boxdetails3'>
-          <img src={datasres.ImageAsset} alt="" height='250px' width='300px' />
-          <h4><Link to='/food-data'>{datasres.Title}</Link></h4>
-          <p>{datasres.BlogContent}</p>
-          <p>{datasres.PublishedDate}</p>
+          <img src={datasres[2].ImageAsset} alt="" height='250px' width='300px' />
+          <h4><Link to='/food-data'>{datasres[2].Title}</Link></h4>
+          <p>{datasres[2].BlogContent}</p>
+          <p>{datasres[2].PublishedDate}</p>
         </div>
       </div>
 
@@ -59,21 +59,21 @@ const Homebox = () => {
 
 
       <div id='hr1'>
-        <img src={datasres.ImageAsset} alt="" className='ltimg1' />
+        <img src={datasres[0].ImageAsset} alt="" className='ltimg1' />
         <div className="latbox">
-          <p >{datasres.BlogContent}</p>
+          <p >{datasres[0].BlogContent}</p>
         </div>
       </div>
       <div id='hr2'>
-        <img src={datasres.ImageAsset} alt="" className='ltimg2' />
+        <img src={datasres[1].ImageAsset} alt="" className='ltimg2' />
         <div className="latbox2">
-          <p >{datasres.BlogContent}</p>
+          <p >{datasres[1].BlogContent}</p>
         </div>
       </div>
       <div id='hr3'>
-        <img src={datasres.ImageAsset} alt="" className='ltimg2' />
+        <img src={datasres[2].ImageAsset} alt="" className='ltimg2' />
         <div className="latbox2">
-          <p >{datasres.BlogContent}</p>
+          <p >{datasres[2].BlogContent}</p>
         </div>
       </div>
       <div id='hr4'></div>
@@ -85,9 +85,9 @@ const Homebox = () => {
        <p style={{ fontSize: '30px', position: 'absolute', top: '1980px', left: '960px' }}>Top Posts
         <hr style={{ width: '200px', height: '3px', backgroundColor: 'lightblue' }} /><br /></p>
          <div className='sidebox' >
-         <img src={datasres.ImageAsset} alt=""  width='250px'  height='150px' />
-         <p>{datasres.BlogContent}</p>
-         <p>{datasres.PublishedDate}</p>
+         <img src={datasres[0].ImageAsset} alt=""  width='250px'  height='150px' />
+         <p>{datasres[0].BlogContent}</p>
+         <p>{datasres[0].PublishedDate}</p>
 
        </div>
        </>)})

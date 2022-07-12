@@ -9,7 +9,7 @@ const Bollywood = () => {
      useEffect(()=>{
   const url='https://blogbackend2.herokuapp.com/api/bolly';
   fetch(url).then(bollyres=>bollyres.json())
-  .then(bollyres=>setval(bollyres))
+  .then(bollyres=>setval([bollyres]))
 },[])
 
      return (<>
@@ -19,17 +19,17 @@ const Bollywood = () => {
   <>
     <h1 style={{ position: 'absolute', left: '50px' }}>BOLLYWOOD <hr /></h1>
     <div id='hr21'>
-      <img src={bollyres.id.ImageAsset} alt="" className='ltimg1' />
+      <img src={bollyres[0].ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-      <h4><Link to='/bollywood-data'>{bollyres.Title}</Link></h4>
-        <p >{bollyres.BlogContent}</p>
+      <h4><Link to='/bollywood-data'>{bollyres[0].Title}</Link></h4>
+        <p >{bollyres[0].BlogContent}</p>
       </div>
     </div>
     <div id='hr22'>
-      <img src={bollyres.ImageAsset[0]} alt="" className='ltimg1' />
+      <img src={bollyres[1].ImageAsset} alt="" className='ltimg1' />
       <div className="latbox">
-      <h4><Link to='/bollywood-data'>{bollyres.Title}</Link></h4>
-        <p >{bollyres.BlogContent}</p>
+      <h4><Link to='/bollywood-data'>{bollyres[1].Title}</Link></h4>
+        <p >{bollyres[1].BlogContent}</p>
       </div>
     </div>
     <div id='hr23'></div>
@@ -39,24 +39,24 @@ const Bollywood = () => {
                                                                                               
                                                                                               
     <div className='sidebox21' >
-      <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
-      <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
-      <p>{bollyres.BlogContent}</p>
-      <p>{bollyres.PublishedDate}</p>
+      <img src={bollyres[2].ImageAsset} alt="" width='250px' height='150px' />
+      <p><Link to='/bollywood-data'>{bollyres[2].Title}</Link></p>
+      <p>{bollyres[2].BlogContent}</p>
+      <p>{bollyres[2].PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox22' >
-      <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
-      <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
-      <p>{bollyres.BlogContent}</p>
-      <p>{bollyres.PublishedDate}</p>
+      <img src={bollyres[0].ImageAsset} alt="" width='250px' height='150px' />
+      <p><Link to='/bollywood-data'>{bollyres[0].Title}</Link></p>
+      <p>{bollyres[0].BlogContent}</p>
+      <p>{bollyres[0].PublishedDate}</p>
       <hr /></div>
 
     <div className='sidebox23' >
-      <img src={bollyres.ImageAsset} alt="" width='250px' height='150px' />
-      <p><Link to='/bollywood-data'>{bollyres.Title}</Link></p>
-      <p>{bollyres.BlogContent}</p>
-      <p>{bollyres.PublishedDate}</p>
+      <img src={bollyres[1].ImageAsset} alt="" width='250px' height='150px' />
+      <p><Link to='/bollywood-data'>{bollyres[1].Title}</Link></p>
+      <p>{bollyres[1].BlogContent}</p>
+      <p>{bollyres[1].PublishedDate}</p>
       <hr /></div>
 
 
