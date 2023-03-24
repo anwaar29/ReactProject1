@@ -7,7 +7,7 @@ const Bollywood = () => {
  const [val,setval]=useState([])
 
      useEffect(()=>{
-  const url='https://blogbackend2.herokuapp.com/api/bolly';
+  const url='https://blogbackend-ashen.vercel.app/api/bolly';
   fetch(url).then(bollyres=>bollyres.json())
   .then(bollyres=>setval([bollyres]))
 },[])
