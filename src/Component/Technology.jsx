@@ -8,7 +8,7 @@ const Technology = () => {
   const [val,setval]=useState([])
 
   useEffect(()=>{
-    const url='https://blogbackend2.herokuapp.com/api/tech';
+    const url='https://blogbackend-ashen.vercel.app/api/tech';
     fetch(url).then(techres=>techres.json())
     .then(techres=>setval([techres]))
   },[])
