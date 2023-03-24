@@ -7,7 +7,7 @@ const Hollywood = () => {
   const [val,setval]=useState([])
 
   useEffect(()=>{
-    const url='https://blogbackend2.herokuapp.com/api/holly';
+    const url='https://blogbackend-ashen.vercel.app/api/holly';
     fetch(url).then(hollyres=>hollyres.json())
     .then(hollyres=>setval([hollyres]))
   },[])
