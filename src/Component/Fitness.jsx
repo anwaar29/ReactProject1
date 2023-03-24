@@ -6,7 +6,7 @@ const Fitness = () => {
   const [val,setval]=useState([])
 
   useEffect(()=>{
-    const url='https://blogbackend2.herokuapp.com/api/fitty';
+    const url='https://blogbackend-ashen.vercel.app/api/fitty';
     fetch(url).then(fittyres=>fittyres.json())
     .then(fittyres=>setval([fittyres]))
   },[])
