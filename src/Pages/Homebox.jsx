@@ -8,7 +8,7 @@ const Homebox = () => {
   const [val,setval]=useState([])
 
   useEffect(()=>{
-    const url='https://blogbackend2.herokuapp.com/api/datas';
+    const url='https://blogbackend-ashen.vercel.app/api/datas';
     fetch(url).then(datasres=>datasres.json())
     .then(datasres=>setval([datasres]))
   },[])
