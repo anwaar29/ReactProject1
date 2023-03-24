@@ -6,7 +6,7 @@ const Food = () => {
   const [val,setval]=useState([])
 
   useEffect(()=>{
-    const url='https://blogbackend2.herokuapp.com/api/food';
+    const url='https://blogbackend-ashen.vercel.app/api/food';
     fetch(url).then(foodres=>foodres.json())
     .then(foodres=>setval([foodres]))
   },[])
